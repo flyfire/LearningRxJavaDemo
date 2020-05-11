@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import kotlin.math.log
+import androidx.lifecycle.Observer
 
 class MainActivity : AppCompatActivity() {
     private val TAG = MainActivity::class.java.simpleName
