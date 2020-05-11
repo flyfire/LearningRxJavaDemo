@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicBoolean
  * </pre>
  */
  
-class SolarexRxBinding(val view:View) : Observable<Any>() {
+class SolarexRxBinding(private val view:View) : Observable<Any>() {
 
     override fun subscribeActual(observer: Observer<in Any>?) {
         val listenerObserver = ListenerObserver(WeakReference(view), observer)
