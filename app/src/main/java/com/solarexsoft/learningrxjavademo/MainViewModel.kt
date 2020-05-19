@@ -16,12 +16,12 @@ class MainViewModel : ViewModel() {
     val currentQuestion: LiveData<String> = Transformations.map(index, questionList::get)
 
     fun mockQuestion() {
-        thread {
+        Thread {
             Thread.sleep(1000)
             questionList = arrayListOf("solarex", "flyfire")
             index.postValue(0)
             questionList = arrayListOf("hello", "world", "china")
             index.postValue(2)
-        }
+        }.start()
     }
 }
