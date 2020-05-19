@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         }
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         mainViewModel.currentQuestion.observe(this, Observer {
-            Log.d(TAG, "current question = $it")
+            Log.d(TAG, "thread = ${Thread.currentThread().name}, current question = $it")
         })
         mainViewModel.mockQuestion()
     }

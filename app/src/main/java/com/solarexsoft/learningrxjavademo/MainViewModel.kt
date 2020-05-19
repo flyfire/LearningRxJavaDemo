@@ -11,16 +11,19 @@ import kotlin.concurrent.thread
  * Desc:
  */
 class MainViewModel : ViewModel() {
-    var questionList:List<String> = emptyList()
+    var questionList:MutableList<String> = mutableListOf()
     val index:MutableLiveData<Int> = MutableLiveData()
     val currentQuestion: LiveData<String> = Transformations.map(index, questionList::get)
 
     fun mockQuestion() {
         Thread {
             Thread.sleep(1000)
-            questionList = arrayListOf("solarex", "flyfire")
+            questionList.clear()
+            questionList.addAll(arrayListOf("solarex", "flyfire"))
             index.postValue(0)
-            questionList = arrayListOf("hello", "world", "china")
+            Thread.sleep(2000)
+            questionList.clear()
+            questionList.addAll(arrayListOf("hello", "world", "china"))
             index.postValue(2)
         }.start()
     }
