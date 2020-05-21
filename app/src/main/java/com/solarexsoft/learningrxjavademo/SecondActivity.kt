@@ -20,6 +20,7 @@ class SecondActivity : AppCompatActivity() {
             val intent = Intent(context, SecondActivity::class.java)
             intent.putExtra(KEY_SUBTITLE, subtitles as Serializable)
             context.startActivity(intent)
+            (context as AppCompatActivity).overridePendingTransition(R.anim.bottom_up, R.anim.keep)
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
