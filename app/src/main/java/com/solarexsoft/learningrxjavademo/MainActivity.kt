@@ -6,6 +6,7 @@ import android.util.Log
 import kotlin.math.log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -25,5 +26,9 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "thread = ${Thread.currentThread().name}, current question = $it")
         })
         mainViewModel.mockQuestion()
+        tv.setOnClickListener {
+            val subtitles = listOf(Subtitle(0L, 1000L, 1, "hi"), Subtitle(2000L, 3000L, 2, "aloha"))
+            SecondActivity.start(this, subtitles)
+        }
     }
 }
