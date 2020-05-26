@@ -6,6 +6,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by houruhou on 2020/5/26/8:55 PM
  * Desc:
@@ -13,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class InOutJava {
     public static void main(String[] args) {
         RecyclerView.Adapter<? extends RecyclerView.ViewHolder> hi = new MyAdapter();
+        List<? super String> test = new ArrayList<Object>();
     }
     static class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
@@ -38,4 +43,6 @@ public class InOutJava {
             super(itemView);
         }
     }
+
+
 }
