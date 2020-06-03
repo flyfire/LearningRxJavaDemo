@@ -62,6 +62,14 @@ dependencies {
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml
     implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.11.0'
 
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit-mock
+    androidTestImplementation group: 'com.squareup.retrofit2', name: 'retrofit-mock', version: '2.3.0'
+    // https://mvnrepository.com/artifact/com.squareup.okhttp3/mockwebserver
+    androidTestImplementation group: 'com.squareup.okhttp3', name: 'mockwebserver', version: '3.12.1'
+    // https://mvnrepository.com/artifact/com.squareup.spoon/spoon-client
+    androidTestImplementation group: 'com.squareup.spoon', name: 'spoon-client', version: '1.7.1'
+
+
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
 }
